@@ -130,6 +130,7 @@ public class NewsFragment extends ListFragment {
 					new GetDataTask().execute();
 				}else{
 					Toast.makeText(getActivity(), "Çë¼ì²éÍøÂç!!", Toast.LENGTH_SHORT).show() ;
+					mPullRefreshScrollView.onRefreshComplete();
 				}
 			}
 		});

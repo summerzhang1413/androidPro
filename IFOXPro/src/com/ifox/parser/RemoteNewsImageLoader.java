@@ -31,6 +31,7 @@ public class RemoteNewsImageLoader {
 			URL url  = new URL(imageNewsInfoPath) ;
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection() ;
 			conn.setConnectTimeout(5000) ;
+			conn.setReadTimeout(5000) ;
 			conn.connect() ;
 			InputStream input = conn.getInputStream() ;
 			ParseXmlService parse = new ParseXmlService() ;// π”√DOMΩ‚Œˆ
@@ -109,7 +110,8 @@ public class RemoteNewsImageLoader {
 		try {
 			myFileURL = new URL(url);
 			HttpURLConnection conn = (HttpURLConnection) myFileURL.openConnection();
-			conn.setConnectTimeout(6000);
+			conn.setConnectTimeout(5000);
+			conn.setReadTimeout(5000) ;
 			conn.setDoInput(true);
 			conn.connect();
 			InputStream is = conn.getInputStream();
