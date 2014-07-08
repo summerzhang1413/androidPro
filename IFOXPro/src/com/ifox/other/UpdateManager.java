@@ -120,6 +120,7 @@ public class UpdateManager {
 		            HttpURLConnection conn = (HttpURLConnection)url.openConnection();  
 		            conn.setReadTimeout(5*1000);  
 		            conn.setRequestMethod("GET");  
+		            conn.setReadTimeout(5000) ;
 		            InputStream inStream = conn.getInputStream();  
 		            // π”√DOMΩ‚Œˆ
 		            ParseXmlService service = new ParseXmlService(); 

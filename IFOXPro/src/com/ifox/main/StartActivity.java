@@ -18,22 +18,7 @@ public class StartActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE) ;
 		super.setContentView(R.layout.start_acti) ;
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN) ;
-		//¼ì²éÍøÂçÁ¬½Ó×´Ì¬
-//		NetworkConnected nc = new NetworkConnected(StartActivity.this) ;
-//		boolean isConnected = nc.isNetworkConnected() ;
-//		if(isConnected){
-//			new Thread(new Runnable(){
-//	
-//					@Override
-//					public void run() {
-//						// TODO Auto-generated method stub
-//						RemoteNewsImageLoader newsImageLoader = new RemoteNewsImageLoader(StartActivity.this) ;
-//						newsImageLoader.saveNewsDetails() ;
-//						newsImageLoader.saveRemoteImage() ;
-//					}
-//				}
-//			).start() ;
-//		}
+
 		new Handler().postDelayed(new Runnable(){
 			@Override
 			public void run() {

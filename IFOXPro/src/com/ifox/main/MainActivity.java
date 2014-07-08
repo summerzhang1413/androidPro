@@ -42,9 +42,6 @@ public class MainActivity extends FragmentActivity {
     private int bottomLineWidth;
 	private int offset  = 0;
 	
-	private NetworkConnected nc ;
-	private boolean isCon ;
-	private boolean target_main = false;//是否需要更新的标志位
 	private UpdateManager up ;	//更新检查
 	
 	@Override
@@ -54,8 +51,8 @@ public class MainActivity extends FragmentActivity {
 		super.setContentView(R.layout.main) ;
 		
 		//检查网络连接状态
-		nc = new NetworkConnected(MainActivity.this) ;
-		isCon = nc.isNetworkConnected() ;
+		NetworkConnected nc = new NetworkConnected(MainActivity.this) ;
+		boolean isCon = nc.isNetworkConnected() ;
 		if(isCon){
 			up = new UpdateManager(MainActivity.this) ;
 			up.sendM() ; //版本检查更新保存到本地文件
@@ -95,6 +92,7 @@ public class MainActivity extends FragmentActivity {
 		arraylist.add(otherfragment);
 		vpager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), arraylist));
 		vpager.setCurrentItem(0);
+		vpager.setOffscreenPageLimit(2) ;//缓存两张fragment页面
 		vpager.setOnPageChangeListener(new MyChangeListener());
 		
 	}

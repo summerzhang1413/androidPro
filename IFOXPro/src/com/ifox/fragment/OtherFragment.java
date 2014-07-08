@@ -22,9 +22,7 @@ public class OtherFragment extends Fragment {
 	private LinearLayout other_login, other_about, other_update, other_cancel ;
 	private static  final String FILENAME = "version" ; //读取是否需要更新文件信息
 	private boolean target = false ;
-	private UpdateManager up ;	//更新检查
-	private NetworkConnected nc ;//检查网络连接状态
-	private boolean isCon ; //网络连接成功与否的标志位
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
@@ -76,10 +74,10 @@ public class OtherFragment extends Fragment {
 					break;
 					}
 				case 3:{
-					nc = new NetworkConnected(getActivity()) ;
-					isCon = nc.isNetworkConnected() ;
+					NetworkConnected nc = new NetworkConnected(getActivity()) ;
+					boolean isCon = nc.isNetworkConnected() ;
 					if(isCon){
-						up = new UpdateManager(getActivity()) ;
+						UpdateManager up = new UpdateManager(getActivity()) ;
 						//读取本地版本是否更新文件
 						SharedPreferences share = getActivity().getSharedPreferences(FILENAME,
 								Activity.MODE_PRIVATE);	// 指定操作的文件名称
