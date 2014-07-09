@@ -55,7 +55,9 @@
         <activity 
             android:name="com.ifox.other.UpdateActivity">            
         </activity>
-        
+        <activity 
+            android:name="com.ifox.other.UpdatelogActivity">            
+        </activity>
         <activity 
             android:name="com.ifox.fragment.NewsDetailActivity">            
         </activity>

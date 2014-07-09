@@ -11,6 +11,7 @@
     <string name="register">注册</string>
     <string name="about">关于</string>
     <string name="update">检查更新</string>
+    <string name="updatelog">更新日志</string>
     <string name="cancel">发现</string>
     <string name="news_detail">新闻</string>
     <string name="other_login_title">登录通行证</string>

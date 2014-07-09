@@ -15,11 +15,12 @@ import com.ifox.main.R;
 import com.ifox.other.AboutActivity;
 import com.ifox.other.LoginActivity;
 import com.ifox.other.UpdateManager;
+import com.ifox.other.UpdatelogActivity;
 import com.ifox.util.NetworkConnected;
 
 public class OtherFragment extends Fragment {
 	
-	private LinearLayout other_login, other_about, other_update, other_cancel ;
+	private LinearLayout other_login, other_about, other_update, other_updatelog ;
 	private static  final String FILENAME = "version" ; //读取是否需要更新文件信息
 	private boolean target = false ;
 	
@@ -42,11 +43,13 @@ public class OtherFragment extends Fragment {
 		other_login=(LinearLayout) view.findViewById(R.id.other_login);
 		other_about=(LinearLayout) view.findViewById(R.id.other_about);
 		other_update=(LinearLayout) view.findViewById(R.id.other_update);
+		other_updatelog=(LinearLayout) view.findViewById(R.id.other_updatelog);
 		
 		
 		other_login.setOnClickListener(new LinearLayoutOnClickListener(0));
-		other_about.setOnClickListener(new LinearLayoutOnClickListener(2));
-		other_update.setOnClickListener(new LinearLayoutOnClickListener(3));
+		other_about.setOnClickListener(new LinearLayoutOnClickListener(1));
+		other_update.setOnClickListener(new LinearLayoutOnClickListener(2));
+		other_updatelog.setOnClickListener(new LinearLayoutOnClickListener(3));
 		
 	}
 	
@@ -67,13 +70,13 @@ public class OtherFragment extends Fragment {
 					getActivity().overridePendingTransition(R.anim.otherin, R.anim.hold);
 					break;
 					}
-				case 2 :{
+				case 1 :{
 					Intent intent = new Intent(getActivity(),AboutActivity.class);
 					getActivity().startActivity(intent);
 					getActivity().overridePendingTransition(R.anim.otherin, R.anim.hold);
 					break;
 					}
-				case 3:{
+				case 2:{
 					NetworkConnected nc = new NetworkConnected(getActivity()) ;
 					boolean isCon = nc.isNetworkConnected() ;
 					if(isCon){
@@ -90,7 +93,10 @@ public class OtherFragment extends Fragment {
 					
 					break;
 				}
-				case 1 :{ 
+				case 3 :{ 
+					Intent intent = new Intent(getActivity(),UpdatelogActivity.class);
+					getActivity().startActivity(intent);
+					getActivity().overridePendingTransition(R.anim.otherin, R.anim.hold);
 					
 					break;
 				}
